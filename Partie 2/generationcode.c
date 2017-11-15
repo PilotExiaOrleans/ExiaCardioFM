@@ -27,6 +27,12 @@ void generationcode()
                if (fichier1 != NULL)
     {
         printf("ouverture du fichier \n");
+        system("start param.h/param.h.ino");
+        Sleep(7000);
+        keybd_event(VK_CONTROL,0,0,0);
+        keybd_event('U',0,0,0);
+        keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+
     }
     else
     {
