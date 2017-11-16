@@ -11,10 +11,10 @@ void ordreFichier()
     monFichier = ouvertureFichier("fichierFake.txt");
     chargementDesDonnees(monFichier);
 
- /*   printf("ON AFFICHE\n");
+    printf("ON AFFICHE\n");
     int i = 0;
         for(i = 0; i < TAILLE_MAX; i++)
         {
             printf("%d\n",tableauDeDonnees[i].battement);
-        }*/
+        }
 }
