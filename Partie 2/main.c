@@ -7,4 +7,3 @@ int main()
     generationcode();
     return 0;
 }
-//test
