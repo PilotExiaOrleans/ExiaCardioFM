@@ -4,6 +4,6 @@
 
 int main()
 {
-    printf("%d", menu());
+    generationcode();
     return 0;
 }

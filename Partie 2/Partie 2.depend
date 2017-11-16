@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1510738877 source:c:\users\axel\documents\github\exiacardiofm\partie 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1510736107 c:\users\axel\documents\github\exiacardiofm\partie 2\menu.h
+
+1510736107 source:c:\users\axel\documents\github\exiacardiofm\partie 2\menu.c
+	<stdlib.h>
+	<stdio.h>
+	"menu.h"
+
+1510740189 source:c:\users\axel\documents\github\exiacardiofm\partie 2\generationcode.c
+	<stdlib.h>
+	<stdio.h>
+	"menu.h"
+
+1510759524 source:c:\users\nicolas drapier\documents\github\exiacardiofm\partie 2\generationcode.c
+	<stdlib.h>
+	<stdio.h>
+	"menu.h"
+
+1510759524 c:\users\nicolas drapier\documents\github\exiacardiofm\partie 2\menu.h
+
+1510759524 source:c:\users\nicolas drapier\documents\github\exiacardiofm\partie 2\menu.c
+	<stdlib.h>
+	<stdio.h>
+	"menu.h"
+
