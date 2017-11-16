@@ -19,9 +19,10 @@ void chargementDesDonnees(FILE* monFichier)
        tableauDeDonnees[i].battement = poul;
        tableauDeDonnees[i].temps = temps;
 
-    /*printf("%d;%d;%f\n",tableauDeDonnees[i].id,tableauDeDonnees[i].battement,tableauDeDonnees[i].temps);*/
+    printf("%d;%d;%f\n",tableauDeDonnees[i].id,tableauDeDonnees[i].battement,tableauDeDonnees[i].temps);
     i++;
     }
+
 }
 
 FILE* ouvertureFichier(char *nomDuFichier)
