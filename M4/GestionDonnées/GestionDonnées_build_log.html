@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>16-11-2017 at 16:37.40</u><br />
-Build ended on: <u>16-11-2017 at 16:37.42</u><p />
+Build started on: <u>16-11-2017 at 16:41.25</u><br />
+Build ended on: <u>16-11-2017 at 16:41.28</u><p />
 <b>-------------- Build: Release in GestionDonnées (compiler: GNU GCC Compiler)---------------</b><br />
 mingw32-gcc.exe -Wall -O2 -std=c99 -ansi -pg -g  -c "C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\main.c" -o obj\Release\main.o<br />
 In file included from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\menu.c:1:0,<br />
@@ -35,7 +35,7 @@ In file included from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\
         ^<br />
 In file included from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\actions.c:2:0,<br />
                  from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\main.c:4:<br />
-<font color="#0000ff">C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\donnees.h:16:8: warning: extra tokens at end of #endif directive</font><br />
+<font color="#0000ff">C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\donnees.h:17:8: warning: extra tokens at end of #endif directive</font><br />
  #endif // DONNEES_H_INCLUDED<br />
         ^<br />
 In file included from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\main.c:4:0:<br />
@@ -43,10 +43,15 @@ C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\action
 <font color="#0000ff">C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\actions.c:15:9: warning: unused variable 'i' [-Wunused-variable]</font><br />
      int i = 0;<br />
          ^<br />
+In file included from C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\main.c:5:0:<br />
+C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\donnees.c: In function 'chargementDesDonnees':<br />
+<font color="#0000ff">C:\Users\Nicolas Drapier\Documents\GitHub\ExiaCardioFM\M4\GestionDonnées\donnees.c:8:23: warning: variable 'tableauDeDonnees' set but not used [-Wunused-but-set-variable]</font><br />
+     struct mesDonnees tableauDeDonnees[TAILLE_TABLEAU];<br />
+                       ^<br />
 mingw32-g++.exe  -o bin\Release\GestionDonnées.exe obj\Release\main.o  -s -pg -lgmon  <br />
 Output file is bin\Release\GestionDonnées.exe with size 36.50 KB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
-<font color="#0000ff">0 error(s), 6 warning(s) (0 minute(s), 1 second(s))</font><br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 2 second(s))</font><br />
+<font color="#0000ff">0 error(s), 7 warning(s) (0 minute(s), 2 second(s))</font><br />
 </tt>
 </body>
 </html>

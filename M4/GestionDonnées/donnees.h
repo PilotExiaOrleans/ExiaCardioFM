@@ -13,4 +13,5 @@ typedef struct mesDonnees
 
 FILE* ouvertureFichier(char *nomDuFichier);
 void chargementDesDonnees(FILE* monFichier);
+
 #endif // DONNEES_H_INCLUDED
