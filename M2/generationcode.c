@@ -33,17 +33,19 @@ void generationcode()
             if (fichier1 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fprintf(fichier1,"const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i++)\n {\n digitalWrite(i-1, LOW);\n  digitalWrite(i, HIGH);\n delay(fDelay);\n if(i == 11)\n{ \n digitalWrite(i, LOW); \n} \n } \n }");
+                    fprintf(fichier1,"const short fDelay = 666;//==>90 BPM\n void setup()\n {\n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n for(short i=2; i<12; i++)\n {\n digitalWrite(i-1, LOW);\n digitalWrite(i, HIGH);\n delay(fDelay);\n if(i == 11)\n {\n digitalWrite(i, LOW);\n }\n }\n }");
                     fclose(fichier1);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -61,17 +63,19 @@ void generationcode()
             if (fichier2 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fprintf(fichier2,"\nconst short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{ \n short ledUpTime = 50; \n for(short i=2; i<12; i+=2) \n { \n if (i>=12) {i-=10;} \n digitalWrite(i, HIGH); \n delay(ledUpTime);\n digitalWrite(i, LOW); \n delay(fDelay); \n } " );
+                    fprintf(fichier2,"const short fDelay = 666;//==>90 BPM\n void setup()\n { \n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<12; i+=2)\n {\n if (i>=12) {i-=10;}\n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n }\n }" );
                     fclose(fichier2);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -89,17 +93,19 @@ void generationcode()
             if (fichier3 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n void setup() \n { \n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);} \n  } \nvoid loop() \n { \n short ledUpTime = 50; \n for(short i=2; i<15; i+=3) \n { \n  if (i>=12) {i-=10; \n } \n digitalWrite(i, HIGH); \n delay(ledUpTime); \n digitalWrite(i, LOW); \n delay(fDelay); \n } \ n}",fichier3);
+                    fputs("const short fDelay = 666;//==>90 BPM\nvoid setup()\n{\nfor(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n  }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<15; i+=3)\n {\n  if (i>=12) {i-=10;\n } \n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n } \n}",fichier3);
                     fclose(fichier3);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -108,16 +114,16 @@ void generationcode()
                 }
                     break;
 
-            case 4: /*CAS_4*/
+            /*case 4:
                 printf("Votre choix est 4 - Une seule LED au choix au rythme de votre coeur\n");
 
                     printf("Veuillez choisir la Led entre 1 est 10 que vous voulez faire clignoter\n");
                     scanf("%d",&choix2);
 
-                    switch(choix2) /*NOUVEAU SWITCH*/
-                    {
-                       case 1: /*CAS_1_BIS*/
-                            printf("Votre choix de Led est la numéro 1");
+                    switch(choix2)
+                    {   */
+                       case 10: /*CAS_1_BIS*/
+                            printf("Votre choix de Led est la numéro 1\n");
                             fichier40=fopen("param.h\\param.h.ino","r+");fichier40;
 
 
@@ -125,17 +131,19 @@ void generationcode()
             if (fichier40 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 2; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier40);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 2;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier40);
                     fclose(fichier40);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -144,8 +152,8 @@ void generationcode()
                 }
                     break;
 
-                       case 2: /*CAS_2_BIS*/
-                            printf("Votre choix de Led est la numéro 2");
+                      case 11:
+                            printf("Votre choix de Led est la numéro 2\n");
                             fichier41=fopen("param.h\\param.h.ino","r+");fichier41;
 
 
@@ -153,17 +161,19 @@ void generationcode()
             if (fichier41 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 3; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier41);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 3;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier41);
                     fclose(fichier41);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -172,8 +182,8 @@ void generationcode()
                 }
                     break;
 
-                       case 3: /*CAS_3_BIS*/
-                            printf("Votre choix de Led est la numéro 3");
+                       case 12:
+                            printf("Votre choix de Led est la numéro 3\n");
                             fichier42=fopen("param.h\\param.h.ino","r+");fichier42;
 
 
@@ -181,17 +191,19 @@ void generationcode()
             if (fichier42 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 4; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier42);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 4;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier42);
                     fclose(fichier42);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -200,8 +212,8 @@ void generationcode()
                 }
                     break;
 
-                       case 4: /*CAS_4_BIS*/
-                            printf("Votre choix de Led est la numéro 4");
+                       case 13:
+                            printf("Votre choix de Led est la numéro 4\n");
                             fichier43=fopen("param.h\\param.h.ino","r+");fichier43;
 
 
@@ -209,17 +221,19 @@ void generationcode()
             if (fichier43 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 5; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier43);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 5;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier43);
                     fclose(fichier43);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -228,8 +242,8 @@ void generationcode()
                 }
                     break;
 
-                       case 5: /*CAS_5_BIS*/
-                            printf("Votre choix de Led est la numéro 5");
+                       case 14:
+                            printf("Votre choix de Led est la numéro 5\n");
                             fichier44=fopen("param.h\\param.h.ino","r+");fichier44;
 
 
@@ -237,17 +251,19 @@ void generationcode()
             if (fichier44 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 6; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier44);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 6;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier44);
                     fclose(fichier44);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -256,8 +272,8 @@ void generationcode()
                 }
                     break;
 
-                       case 6: /*CAS_6_BIS*/
-                            printf("Votre choix de Led est la numéro 6");
+                       case 15:
+                            printf("Votre choix de Led est la numéro 6\n");
                             fichier45=fopen("param.h\\param.h.ino","r+");fichier45;
 
 
@@ -265,17 +281,19 @@ void generationcode()
             if (fichier45 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 7; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier45);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 7;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier45);
                     fclose(fichier45);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -284,8 +302,8 @@ void generationcode()
                 }
                     break;
 
-                       case 7: /*CAS_7_BIS*/
-                            printf("Votre choix de Led est la numéro 7");
+                       case 16:
+                            printf("Votre choix de Led est la numéro 7\n");
                             fichier46=fopen("param.h\\param.h.ino","r+");fichier46;
 
 
@@ -293,17 +311,19 @@ void generationcode()
             if (fichier46 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 8; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier46);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 8;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier46);
                     fclose(fichier46);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);;
                 }
 
             else
@@ -312,8 +332,8 @@ void generationcode()
                 }
                     break;
 
-                       case 8: /*CAS_8_BIS*/
-                            printf("Votre choix de Led est la numéro 8");
+                       case 17:
+                            printf("Votre choix de Led est la numéro 8\n");
                            fichier47=fopen("param.h\\param.h.ino","r+");fichier47;
 
 
@@ -321,17 +341,19 @@ void generationcode()
             if (fichier47 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 9; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier47);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 9;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier47);
                     fclose(fichier47);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -340,8 +362,8 @@ void generationcode()
                 }
                     break;
 
-                       case 9: /*CAS_9_BIS*/
-                            printf("Votre choix de Led est la numéro 9");
+                       case 18:
+                            printf("Votre choix de Led est la numéro 9\n");
                             fichier48=fopen("param.h\\param.h.ino","r+");fichier48;
 
 
@@ -349,17 +371,19 @@ void generationcode()
             if (fichier48 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 10; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier48);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 10;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier48);
                     fclose(fichier48);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -368,8 +392,8 @@ void generationcode()
                 }
                     break;
 
-                       case 10: /*CAS_10_BIS*/
-                            printf("Votre choix de Led est la numéro 10");
+                       case 19:
+                            printf("Votre choix de Led est la numéro 10\n");
                             fichier49=fopen("param.h\\param.h.ino","r+");fichier49;
 
 
@@ -377,17 +401,19 @@ void generationcode()
             if (fichier49 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 11; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier49);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 11;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier49);
                     fclose(fichier49);
                     system("start param.h\\param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
@@ -399,8 +425,8 @@ void generationcode()
                        default:
                            printf("ERREUR");
                         break;
-                    }
-            case 5: /*CAS_5*/
+
+            case 5:
                     printf("5 - Une chenille de LED au rythme de votre coeur\n");
                    fichier5=fopen("param.h\\param.h.ino","r+");fichier5;
 
@@ -409,9 +435,6 @@ void generationcode()
             if (fichier5 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
                     fputs("const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i++)\n {\n digitalWrite(i, HIGH);}\n delay(ledUpTime);\n for(short i=2; i<12; i++) {digitalWrite(i, LOW);}\n delay(fDelay-ledUpTime);\n}",fichier5);
                     fclose(fichier5);
@@ -420,6 +443,11 @@ void generationcode()
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);
                 }
 
             else
