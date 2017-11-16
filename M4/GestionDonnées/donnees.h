@@ -12,9 +12,6 @@ typedef struct mesDonnees
 }mesDonnees;
 
 FILE* ouvertureFichier(char *nomDuFichier);
-void chargementDesDonnees(FILE* monFichier/*,struct mesDonnees *monTableau*/);
-
-
-
+void chargementDesDonnees(FILE* monFichier);
 
 #endif // DONNEES_H_INCLUDED

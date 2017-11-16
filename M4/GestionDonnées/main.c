@@ -7,6 +7,11 @@
 
 int main()
 {
+    FILE *monFichier = NULL;
+
+    monFichier = ouvertureFichier("fichierFake.txt");
+    chargementDesDonnees(monFichier);
+
     choixDuMenu();
     return 0;
 }
