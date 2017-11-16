@@ -46,6 +46,7 @@ void generationcode()
                     keybd_event('A',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                     keybd_event(VK_DELETE,0,0,0);
+
                 }
 
             else

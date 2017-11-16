@@ -1,15 +1,18 @@
-
- const short fDelay = 666;//==>90 BPM
- const short ledUpTime = 50;
- const short chosenLED = 10;
- void setup() 
+const short fDelay = 666;//==>90 BPM
+ void setup()
  {
- pinMode(chosenLED, OUTPUT);
+ for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}
  }
- void loop() 
+ void loop()
  {
-  digitalWrite(chosenLED, HIGH);
- delay(ledUpTime);
- digitalWrite(chosenLED, LOW);
+ for(short i=2; i<12; i++)
+ {
+ digitalWrite(i-1, LOW);
+ digitalWrite(i, HIGH);
  delay(fDelay);
+ if(i == 11)
+ {
+ digitalWrite(i, LOW);
+ }
+ }
  }
