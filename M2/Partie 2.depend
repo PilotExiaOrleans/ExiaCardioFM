@@ -11,9 +11,11 @@
 	<stdio.h>
 	"menu.h"
 
-1510740189 source:c:\users\axel\documents\github\exiacardiofm\partie 2\generationcode.c
+1510824697 source:c:\users\axel\documents\github\exiacardiofm\partie 2\generationcode.c
 	<stdlib.h>
 	<stdio.h>
+	<windows.h>
+	<time.h>
 	"menu.h"
 
 1510759524 source:c:\users\nicolas drapier\documents\github\exiacardiofm\partie 2\generationcode.c
@@ -26,5 +28,24 @@
 1510759524 source:c:\users\nicolas drapier\documents\github\exiacardiofm\partie 2\menu.c
 	<stdlib.h>
 	<stdio.h>
+	"menu.h"
+
+1510827441 source:c:\users\axel\documents\github\exiacardiofm\m2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.h"
+
+1510827441 c:\users\axel\documents\github\exiacardiofm\m2\menu.h
+
+1510827441 source:c:\users\axel\documents\github\exiacardiofm\m2\menu.c
+	<stdlib.h>
+	<stdio.h>
+	"menu.h"
+
+1510830403 source:c:\users\axel\documents\github\exiacardiofm\m2\generationcode.c
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<time.h>
 	"menu.h"
 
