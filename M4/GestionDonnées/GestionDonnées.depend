@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1510831508 source:d:\projet c++\gestiondonnées\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.c"
+	"actions.c"
+	"donnees.c"
+
+1510831508 d:\projet c++\gestiondonnées\menu.c
+	"menu.h"
+	<stdlib.h>
+	<stdio.h>
+
+1510824329 d:\projet c++\gestiondonnées\menu.h
+
+1510832171 d:\projet c++\gestiondonnées\actions.c
+	"actions.h"
+	"donnees.h"
+	<stdio.h>
+	<stdlib.h>
+
+1510829793 d:\projet c++\gestiondonnées\actions.h
+
+1510833770 d:\projet c++\gestiondonnées\donnees.c
+	"donnees.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1510832157 d:\projet c++\gestiondonnées\donnees.h
+
+1510834424 source:c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\main.c
+	<stdio.h>
+	<stdlib.h>
+	"menu.c"
+	"actions.c"
+	"donnees.c"
+
+1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\menu.c
+	"menu.h"
+	<stdlib.h>
+	<stdio.h>
+
+1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\menu.h
+
+1510839314 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\actions.c
+	"actions.h"
+	"donnees.h"
+	<stdio.h>
+	<stdlib.h>
+
+1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\actions.h
+
+1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\donnees.h
+
+1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\donnees.c
+	"donnees.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
