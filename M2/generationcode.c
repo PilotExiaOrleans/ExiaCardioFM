@@ -5,8 +5,10 @@
 #include "menu.h"
 void generationcode()
 {
+    int continuer;
+  do{
     switch(menu())
-    {
+      {
         int choix2;
         FILE* fichier1= NULL;
         FILE* fichier2= NULL;
@@ -25,414 +27,614 @@ void generationcode()
 
 
             case 1: /*CAS_1*/
-            printf(" Votre choix est 1 - Toutes les LED au rythme de votre coeur\n");
-            fichier1=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier1;
+            printf(" Votre choix est 1 - Une chenille de LED au rythme de votre coeur\n\n");
+            fichier1=fopen("param.h//param.h.ino","w+");fichier1;
 
 
 
             if (fichier1 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i++)\n {\n digitalWrite(i-1, LOW);\n  digitalWrite(i, HIGH);\n delay(fDelay);\n if(i == 11)\n{\n digitalWrite(i, LOW);\n}\n}\n}",fichier1);
+                    fprintf(fichier1,"const short fDelay = 666;//==>90 BPM\n void setup()\n {\n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n for(short i=2; i<12; i++)\n {\n digitalWrite(i-1, LOW);\n digitalWrite(i, HIGH);\n delay(fDelay);\n if(i == 11)\n {\n digitalWrite(i, LOW);\n }\n }\n }");
                     fclose(fichier1);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h//param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+
                 }
 
             else
                 {
-                    printf("Impossible d'ouvrir le fichier \n");
+                    printf("Impossible d'ouvrir le fichier, test d'en créer un \n");
+                    fichier1=fopen("param.h.ino","w+");fichier1;
+                    if (fichier1 !=NULL)
+                    {
+                    printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fprintf(fichier1,"const short fDelay = 666;//==>90 BPM\n void setup()\n {\n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n for(short i=2; i<12; i++)\n {\n digitalWrite(i-1, LOW);\n digitalWrite(i, HIGH);\n delay(fDelay);\n if(i == 11)\n {\n digitalWrite(i, LOW);\n }\n }\n }");
+                    fclose(fichier1);
+                    system("param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    }
                 }
-
-
-
-
-
-
-                break;
+                  break;
 
             case 2: /*CAS_2*/
                 printf("Votre choix est 2 - Une LED sur deux au rythme de votre coeur\n");
-                fichier2=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier2;
-
-
-
+                fichier2=fopen("param.h//param.h.ino","w+");fichier2;
             if (fichier2 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i+=2)\n {\n if (i>=12) {i-=10;}\n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n}\n}",fichier2);
+                    fprintf(fichier2,"const short fDelay = 666;//==>90 BPM\n void setup()\n { \n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<12; i+=2)\n {\n if (i>=12) {i-=10;}\n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n }\n }" );
                     fclose(fichier2);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h//param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+
                 }
 
             else
                 {
-                    printf("Impossible d'ouvrir le fichier \n");
+                    printf("Impossible d'ouvrir le fichier , test d'en creer un \n");
+                    fichier2=fopen("param.h.ino","w+");fichier2;
+
+
+                    if (fichier2 != NULL)
+                {
+                    printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fprintf(fichier2,"const short fDelay = 666;//==>90 BPM\n void setup()\n { \n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<12; i+=2)\n {\n if (i>=12) {i-=10;}\n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n }\n }" );
+                    fclose(fichier2);
+                    system("start param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+
+                }
                 }
                     break;
 
             case 3:/*CAS_3*/
                 printf("Votre choix est 3 - Une LED sur trois au rythme de votre coeur\n");
-                fichier3=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier3;
+                fichier3=fopen("param.h//param.h.ino","w+");fichier3;
 
-
-
-            if (fichier3 != NULL)
+                    if (fichier3 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("const short fDelay = 666;//==>90 BPM\nvoid setup()\n{\nfor(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n  }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<15; i+=3)\n {\n  if (i>=12) {i-=10;\n } \n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n } \n}",fichier3);
+                    fclose(fichier3);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                  /*Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, Test d'en creer un \n");
+                    fichier3=fopen("param.h.ino","w+");fichier3;
+
+                    if (fichier3 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n void setup() \n { \n for(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n  } \nvoid loop()\n{\nshort ledUpTime = 50;\nfor(short i=2; i<15; i+=3)\n {\n  if (i>=12) {i-=10;}\n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n}\n}",fichier3);
+                    fputs("const short fDelay = 666;//==>90 BPM\nvoid setup()\n{\nfor(short i=2; i<12; i++) {pinMode(i, OUTPUT);}\n  }\n void loop()\n {\n short ledUpTime = 50;\n for(short i=2; i<15; i+=3)\n {\n  if (i>=12) {i-=10;\n } \n digitalWrite(i, HIGH);\n delay(ledUpTime);\n digitalWrite(i, LOW);\n delay(fDelay);\n } \n}",fichier3);
                     fclose(fichier3);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-            case 4: /*CAS_4*/
+            /*case 4:
                 printf("Votre choix est 4 - Une seule LED au choix au rythme de votre coeur\n");
 
                     printf("Veuillez choisir la Led entre 1 est 10 que vous voulez faire clignoter\n");
                     scanf("%d",&choix2);
 
-                    switch(choix2) /*NOUVEAU SWITCH*/
-                    {
-                       case 1: /*CAS_1_BIS*/
-                            printf("Votre choix de Led est la numéro 1");
-                            fichier40=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier40;
+                    switch(choix2)
+                    {   */
+                       case 10: /*CAS_1_BIS*/
+                            printf("Votre choix de Led est la numero 1\n");
+                            fichier40=fopen("param.h//param.h.ino","w+");fichier40;
 
 
 
             if (fichier40 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 2;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier40);
+                    fclose(fichier40);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+               /*   Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0); */
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier40=fopen("param.h.ino","w+");fichier40;
+                    if (fichier40 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 2; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier40);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 2;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier40);
                     fclose(fichier40);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 2: /*CAS_2_BIS*/
-                            printf("Votre choix de Led est la numéro 2");
-                            fichier41=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier41;
+                      case 11:
+                            printf("Votre choix de Led est la numero 2\n");
+                            fichier41=fopen("param.h//param.h.ino","w+");fichier41;
 
 
 
             if (fichier41 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 3; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier41);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 3;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier41);
                     fclose(fichier41);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h//param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                  /*Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
                 }
 
             else
                 {
                     printf("Impossible d'ouvrir le fichier \n");
+                    fichier41=fopen("param.h.ino","w+");fichier41;
+                    if (fichier41 != NULL)
+                {
+                    printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 3;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier41);
+                    fclose(fichier41);
+                    system("start param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                }
                 }
                     break;
 
-                       case 3: /*CAS_3_BIS*/
-                            printf("Votre choix de Led est la numéro 3");
-                            fichier42=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier42;
+                       case 12:
+                            printf("Votre choix de Led est la numero 3\n");
+                            fichier42=fopen("param.h//param.h.ino","w+");fichier42;
 
 
 
             if (fichier42 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 4;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier42);
+                    fclose(fichier42);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                   /*Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier42=fopen("param.h.ino","w+");fichier42;
+                    if (fichier42 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 4; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier42);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 4;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier42);
                     fclose(fichier42);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 4: /*CAS_4_BIS*/
-                            printf("Votre choix de Led est la numéro 4");
-                            fichier43=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier43;
+                       case 13:
+                            printf("Votre choix de Led est la numero 4\n");
+                            fichier43=fopen("param.h//param.h.ino","w+");fichier43;
 
 
 
             if (fichier43 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 5;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier43);
+                    fclose(fichier43);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                  /*Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier , test d'en creer un \n");
+                    fichier43=fopen("param.h.ino","w+");fichier43;
+                     if (fichier43 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 5; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier43);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 5;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier43);
                     fclose(fichier43);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h//param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 5: /*CAS_5_BIS*/
-                            printf("Votre choix de Led est la numéro 5");
-                            fichier44=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier44;
+                       case 14:
+                            printf("Votre choix de Led est la numero 5\n");
+                            fichier44=fopen("param.h//param.h.ino","w+");fichier44;
 
 
 
             if (fichier44 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 6;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier44);
+                    fclose(fichier44);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                /*  Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en cree un \n");
+                    fichier44=fopen("param.h.ino","w+");fichier44;
+                    if (fichier44 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 6; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier44);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 6;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier44);
                     fclose(fichier44);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 6: /*CAS_6_BIS*/
-                            printf("Votre choix de Led est la numéro 6");
-                            fichier45=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier45;
+                       case 15:
+                            printf("Votre choix de Led est la numero 6\n");
+                            fichier45=fopen("param.h//param.h.ino","w+");fichier45;
 
 
 
             if (fichier45 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 7;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier45);
+                    fclose(fichier45);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                 /* Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier45=fopen("param.h.ino","w+");fichier45;
+                    if (fichier45 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 7; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier45);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 7;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier45);
                     fclose(fichier45);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 7: /*CAS_7_BIS*/
-                            printf("Votre choix de Led est la numéro 7");
-                            fichier46=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier46;
+                       case 16:
+                            printf("Votre choix de Led est la numero 7\n");
+                            fichier46=fopen("param.h//param.h.ino","w+");fichier46;
 
 
 
             if (fichier46 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 8;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier46);
+                    fclose(fichier46);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                /*  Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);;*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier46=fopen("param.h.ino","w+");fichier46;
+                    if (fichier46 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 8; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier46);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 8;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier46);
                     fclose(fichier46);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 8: /*CAS_8_BIS*/
-                            printf("Votre choix de Led est la numéro 8");
-                           fichier47=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier47;
+                       case 17:
+                            printf("Votre choix de Led est la numero 8\n");
+                            fichier47=fopen("param.h//param.h.ino","w+");fichier47;
 
 
 
             if (fichier47 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 9;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier47);
+                    fclose(fichier47);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                  /*Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier47=fopen("param.h.ino","w+");fichier47;
+                    if (fichier47 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 9; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier47);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 9;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier47);
                     fclose(fichier47);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 9: /*CAS_9_BIS*/
-                            printf("Votre choix de Led est la numéro 9");
-                            fichier48=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier48;
+                       case 18:
+                            printf("Votre choix de Led est la numero 9\n");
+                            fichier48=fopen("param.h//param.h.ino","w+");fichier48;
 
 
 
             if (fichier48 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 10;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier48);
+                    fclose(fichier48);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                 /* Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier48=fopen("param.h.ino","w+");fichier48;
+                    if (fichier48 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 10; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier48);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 10;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier48);
                     fclose(fichier48);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
-                       case 10: /*CAS_10_BIS*/
-                            printf("Votre choix de Led est la numéro 10");
-                            fichier49=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier49;
+                       case 19:
+                            printf("Votre choix de Led est la numero 10\n");
+                            fichier49=fopen("param.h//param.h.ino","w+");fichier49;
 
 
 
             if (fichier49 != NULL)
                 {
                     printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 11;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier49);
+                    fclose(fichier49);
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                /*  Sleep(8000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier, test d'en creer un \n");
+                    fichier49=fopen("param.h.ino","w+");fichier49;
+                     if (fichier49 != NULL)
+                {
+                    printf("ouverture du fichier \n");
                     Sleep(2000);
-                    fputs("const short fDelay = 666;//==>90 BPM \n const short ledUpTime = 50; \n const short chosenLED = 11; \n void setup()\n {\npinMode(chosenLED, OUTPUT);n} \n void loop() \n{\ndigitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\ndigitalWrite(chosenLED, LOW);\ndelay(fDelay);\n}",fichier49);
+                    fputs("\n const short fDelay = 666;//==>90 BPM\n const short ledUpTime = 50;\n const short chosenLED = 11;\n void setup() \n {\n pinMode(chosenLED, OUTPUT);\n }\n void loop() \n {\n  digitalWrite(chosenLED, HIGH);\n delay(ledUpTime);\n digitalWrite(chosenLED, LOW);\n delay(fDelay);\n }",fichier49);
                     fclose(fichier49);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
                     break;
 
                        default:
                            printf("ERREUR");
                         break;
-                    }
-            case 5: /*CAS_5*/
-                    printf("5 - Une chenille de LED au rythme de votre coeur\n");
-                   fichier5=fopen("C:\\Users\\axel\\Desktop\\param.h\\param.h.ino","r+");fichier5;
+
+            case 5:
+                    printf("Votre choix est 5 - Toutes les LED au rythme de votre coeur\n");
+                    fichier5=fopen("param.h//param.h.ino","w+");fichier5;
 
 
 
             if (fichier5 != NULL)
                 {
                     printf("ouverture du fichier \n");
-                    keybd_event(VK_CONTROL,0,0,0);
-                    keybd_event('A',0,0,0);
-                    keybd_event(VK_DELETE,0,0,0);
                     Sleep(2000);
                     fputs("const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i++)\n {\n digitalWrite(i, HIGH);}\n delay(ledUpTime);\n for(short i=2; i<12; i++) {digitalWrite(i, LOW);}\n delay(fDelay-ledUpTime);\n}",fichier5);
                     fclose(fichier5);
-                    system("start C:\\Users\\axel\\Desktop\\param.h\\param.h.ino");
+                    system("start param.h//param.h.ino");
+                    Sleep(6000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('U',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                /*  Sleep(8000);
+                    keybd_event(VK_CONTROL,0,0,0);
+                    keybd_event('A',0,0,0);
+                    keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
+                    keybd_event(VK_DELETE,0,0,0);*/
+                }
+
+            else
+                {
+                    printf("Impossible d'ouvrir le fichier , test d'en creer un \n");
+                    fichier5=fopen("param.h.ino","w+");fichier5;
+                    if (fichier5 != NULL)
+                {
+                    printf("ouverture du fichier \n");
+                    Sleep(2000);
+                    fputs("const short fDelay = 666;//==>90 BPM  \n \n \n void setup() \n { \n for(short i=2; i<12; i++) \n {\npinMode(i, OUTPUT);\n} \n } \n \n \n void loop()\n{\n short ledUpTime = 50;\n for(short i=2; i<12; i++)\n {\n digitalWrite(i, HIGH);}\n delay(ledUpTime);\n for(short i=2; i<12; i++) {digitalWrite(i, LOW);}\n delay(fDelay-ledUpTime);\n}",fichier5);
+                    fclose(fichier5);
+                    system("param.h.ino");
                     Sleep(6000);
                     keybd_event(VK_CONTROL,0,0,0);
                     keybd_event('U',0,0,0);
                     keybd_event(VK_CONTROL,0,KEYEVENTF_KEYUP,0);
                 }
-
-            else
-                {
-                    printf("Impossible d'ouvrir le fichier \n");
                 }
-                    break;
-    }
-    }
+                break;
+
+     }
+
+      printf("tapez 1 si vous voulez continuer sinon tapez 0\n");
+      scanf("%d",&continuer);
+   }while(continuer==1);
+}
 
