@@ -1,8 +1,8 @@
 #ifndef DONNEES_H_INCLUDED
 #define DONNEES_H_INCLUDED
 
-#define TAILLE_MAX 17
-#define TAILLE_TABLEAU 620
+#define TAILLE_MAX_LIGNE 17
+#define TAILLE_TABLEAU 200
 
 typedef struct mesDonnees
 {
@@ -12,6 +12,9 @@ typedef struct mesDonnees
 }mesDonnees;
 
 FILE* ouvertureFichier(char *nomDuFichier);
-void chargementDesDonnees(FILE* monFichier);
+void chargementDesDonnees(mesDonnees monTableau[]);
+
+
+
 
 #endif // DONNEES_H_INCLUDED

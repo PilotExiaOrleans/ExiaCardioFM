@@ -6,86 +6,26 @@
 	"actions.c"
 	"donnees.c"
 
-1510831508 d:\projet c++\gestiondonnées\menu.c
+1510917855 d:\projet c++\gestiondonnées\menu.c
 	"menu.h"
 	<stdlib.h>
 	<stdio.h>
 
 1510824329 d:\projet c++\gestiondonnées\menu.h
 
-1510832171 d:\projet c++\gestiondonnées\actions.c
+1510918952 d:\projet c++\gestiondonnées\actions.c
 	"actions.h"
 	"donnees.h"
 	<stdio.h>
 	<stdlib.h>
 
-1510829793 d:\projet c++\gestiondonnées\actions.h
+1510918552 d:\projet c++\gestiondonnées\actions.h
 
-1510833770 d:\projet c++\gestiondonnées\donnees.c
+1510919012 d:\projet c++\gestiondonnées\donnees.c
 	"donnees.h"
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 
-1510832157 d:\projet c++\gestiondonnées\donnees.h
-
-1510834424 source:c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\main.c
-	<stdio.h>
-	<stdlib.h>
-	"menu.c"
-	"actions.c"
-	"donnees.c"
-
-1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\menu.c
-	"menu.h"
-	<stdlib.h>
-	<stdio.h>
-
-1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\menu.h
-
-1510839314 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\actions.c
-	"actions.h"
-	"donnees.h"
-	<stdio.h>
-	<stdlib.h>
-
-1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\actions.h
-
-1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\donnees.h
-
-1510834424 c:\users\axel\documents\github\exiacardiofm\partie 4\gestiondonnées\donnees.c
-	"donnees.h"
-	<stdlib.h>
-	<stdio.h>
-	<string.h>
-
-1510831508 source:c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\main.c
-	<stdio.h>
-	<stdlib.h>
-	"menu.c"
-	"actions.c"
-	"donnees.c"
-
-1510831508 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\menu.c
-	"menu.h"
-	<stdlib.h>
-	<stdio.h>
-
-1510824329 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\menu.h
-
-1510846415 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\actions.c
-	"actions.h"
-	"donnees.h"
-	<stdio.h>
-	<stdlib.h>
-
-1510829793 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\actions.h
-
-1510846654 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\donnees.h
-
-1510846421 c:\users\nicolas drapier\documents\github\exiacardiofm\m4\gestiondonnées\donnees.c
-	"donnees.h"
-	<stdlib.h>
-	<stdio.h>
-	<string.h>
+1510918391 d:\projet c++\gestiondonnées\donnees.h
 

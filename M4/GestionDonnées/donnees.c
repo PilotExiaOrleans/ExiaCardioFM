@@ -3,15 +3,18 @@
 #include <stdio.h>
 #include <string.h>
 
-void chargementDesDonnees(FILE* monFichier)
+void chargementDesDonnees(mesDonnees tableauDeDonnees[])
 {
-    struct mesDonnees tableauDeDonnees[TAILLE_TABLEAU];
     char tab[TAILLE_TABLEAU];
     unsigned int i = 0;
     int id,poul;
     float temps;
 
-    while (fgets(tab, TAILLE_MAX, monFichier) != NULL)
+    FILE *monFichier = NULL;
+    monFichier = ouvertureFichier("fichierFake.txt");
+
+
+    while (fgets(tab, TAILLE_MAX_LIGNE, monFichier) != NULL)
     {
             sscanf(tab,"%d;%d;%f",&id,&poul,&temps);
 
@@ -20,7 +23,6 @@ void chargementDesDonnees(FILE* monFichier)
        tableauDeDonnees[i].temps = temps;
     i++;
     }
-
 }
 
 FILE* ouvertureFichier(char *nomDuFichier)
@@ -30,12 +32,13 @@ FILE* ouvertureFichier(char *nomDuFichier)
 
         if (monFichier != NULL)
         {
-            printf("OUVERTURE OK\n");
+            /*printf("OUVERTURE OK\n");*/
         }
         else
         {
             printf("ERREUR OUVERTURE\n");
             exit(EXIT_FAILURE);
+            fclose(monFichier);
         }
 
     return monFichier;
