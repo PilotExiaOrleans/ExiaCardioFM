@@ -27,7 +27,7 @@ void generationcode()
 
 
             case 1: /*CAS_1*/
-            printf(" Votre choix est 1 - Toutes les LED au rythme de votre coeur\n");
+            printf(" Votre choix est 1 - Une chenille de LED au rythme de votre coeur\n\n");
             fichier1=fopen("param.h//param.h.ino","w+");fichier1;
 
 
@@ -126,7 +126,7 @@ void generationcode()
                     switch(choix2)
                     {   */
                        case 10: /*CAS_1_BIS*/
-                            printf("Votre choix de Led est la numéro 1\n");
+                            printf("Votre choix de Led est la numero 1\n");
                             fichier40=fopen("param.h//param.h.ino","w+");fichier40;
 
 
@@ -156,7 +156,7 @@ void generationcode()
                     break;
 
                       case 11:
-                            printf("Votre choix de Led est la numéro 2\n");
+                            printf("Votre choix de Led est la numero 2\n");
                             fichier41=fopen("param.h//param.h.ino","w+");fichier41;
 
 
@@ -186,7 +186,7 @@ void generationcode()
                     break;
 
                        case 12:
-                            printf("Votre choix de Led est la numéro 3\n");
+                            printf("Votre choix de Led est la numero 3\n");
                             fichier42=fopen("param.h//param.h.ino","w+");fichier42;
 
 
@@ -216,7 +216,7 @@ void generationcode()
                     break;
 
                        case 13:
-                            printf("Votre choix de Led est la numéro 4\n");
+                            printf("Votre choix de Led est la numero 4\n");
                             fichier43=fopen("param.h//param.h.ino","w+");fichier43;
 
 
@@ -246,7 +246,7 @@ void generationcode()
                     break;
 
                        case 14:
-                            printf("Votre choix de Led est la numéro 5\n");
+                            printf("Votre choix de Led est la numero 5\n");
                             fichier44=fopen("param.h//param.h.ino","w+");fichier44;
 
 
@@ -276,7 +276,7 @@ void generationcode()
                     break;
 
                        case 15:
-                            printf("Votre choix de Led est la numéro 6\n");
+                            printf("Votre choix de Led est la numero 6\n");
                             fichier45=fopen("param.h//param.h.ino","w+");fichier45;
 
 
@@ -306,7 +306,7 @@ void generationcode()
                     break;
 
                        case 16:
-                            printf("Votre choix de Led est la numéro 7\n");
+                            printf("Votre choix de Led est la numero 7\n");
                             fichier46=fopen("param.h//param.h.ino","w+");fichier46;
 
 
@@ -336,7 +336,7 @@ void generationcode()
                     break;
 
                        case 17:
-                            printf("Votre choix de Led est la numéro 8\n");
+                            printf("Votre choix de Led est la numero 8\n");
                            fichier47=fopen("param.h//param.h.ino","w+");fichier47;
 
 
@@ -366,7 +366,7 @@ void generationcode()
                     break;
 
                        case 18:
-                            printf("Votre choix de Led est la numéro 9\n");
+                            printf("Votre choix de Led est la numero 9\n");
                             fichier48=fopen("param.h//param.h.ino","w+");fichier48;
 
 
@@ -396,7 +396,7 @@ void generationcode()
                     break;
 
                        case 19:
-                            printf("Votre choix de Led est la numéro 10\n");
+                            printf("Votre choix de Led est la numero 10\n");
                             fichier49=fopen("param.h//param.h.ino","w+");fichier49;
 
 
@@ -430,7 +430,7 @@ void generationcode()
                         break;
 
             case 5:
-                    printf("5 - Une chenille de LED au rythme de votre coeur\n");
+                    printf("Votre choix est 5 - Toutes les LED au rythme de votre coeur\n");
                    fichier5=fopen("param.h//param.h.ino","w+");fichier5;
 
 
